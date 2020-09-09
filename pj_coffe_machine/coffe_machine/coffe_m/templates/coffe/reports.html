@@ -1,0 +1,29 @@
+{% extends 'coffe/base.html' %}
+
+{% block title %} Отчеты {% endblock %}
+
+{% block content %}
+    <h1>All the points</h1>
+
+ <form method="POST" action="create/">
+        {% csrf_token %}
+        <p>
+            <label>Введите дату</label><br>
+            <input type="date" name="date" />
+        </p>
+{% if date > 0%}
+{% for visit in report_visit %}
+     {% if date == Visit.visit_date %}
+                <h2>{{ visit.visit_date }} </h2>
+                <h2>{{ visit.technical_specialist }} </h2>
+                <h2>{{ visit.done }} </h2>
+                <h2>{{ visit.renovation }} </h2>
+                <h2>{{ visit.what_renovation }} </h2>
+     {% endif %}
+
+{% endfor %}
+{% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #333;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 13px;
+	line-height: 1.7em;
+	background-color: #e9e6e6;
+	background-repeat: repeat-x;
+	background-position: top
+}
+
+.nav-item button{
+    margin-left: 10px;
+}

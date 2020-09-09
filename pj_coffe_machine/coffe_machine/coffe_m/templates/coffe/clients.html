@@ -1,0 +1,23 @@
+{% extends 'coffe/base.html' %}
+
+{% block title %}{{ Point_coffemachine.client_point }}{% endblock %}
+
+{% block content %}
+    <h1>All the points</h1>
+
+
+{% for point in points %}
+
+    <h2>{{ point.client_name }} </h2>
+    <h2>{{ point }} </h2>
+    <p>
+    client_address: {{ point.client_address }} <br />
+    point: {{ point.client_point }}
+    </p>
+    <p>
+    </p>
+
+{% endfor %}
+
+
+{% endblock %}

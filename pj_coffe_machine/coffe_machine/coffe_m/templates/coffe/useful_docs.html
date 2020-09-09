@@ -1,0 +1,12 @@
+{% extends 'coffe/base.html' %}
+
+{% block title %} Полезный код {% endblock %}
+
+{% block content %}
+{% for docs in useful_docs %}
+
+    <h>{{ docs.model_machine }} </h>
+    <h>{{ docs.document }} </h>
+
+{% endfor %}
+{% endblock %}
