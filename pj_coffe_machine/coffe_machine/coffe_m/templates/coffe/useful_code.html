@@ -3,10 +3,15 @@
 {% block title %} Полезный код {% endblock %}
 
 {% block content %}
-{% for codes in useful_code %}
-
-    <h>{{ codes.description }} </h>
-    <h>{{ codes.code }} </h>
+<h2>Полезный код для кофемашин </h2>
+    <div class="pull-right">
+    <a href="{% url 'coffe_m:create_useful_code' %}"><button class="btn btn-info"><i class="fas fa=plus-circle"></i>Добавить код</button></a>
+    </div>
+{% for cod in useful_code %}
+    <p>
+    <h>{{ cod.description }} </h>
+    <h>{{ cod.code }} </h>
+    </p>
 
 {% endfor %}
 {% endblock %}

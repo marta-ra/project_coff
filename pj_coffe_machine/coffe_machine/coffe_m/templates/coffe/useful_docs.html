@@ -1,12 +1,17 @@
 {% extends 'coffe/base.html' %}
 
-{% block title %} Полезный код {% endblock %}
+{% block title %} Техническая документация {% endblock %}
 
 {% block content %}
-{% for docs in useful_docs %}
-
-    <h>{{ docs.model_machine }} </h>
-    <h>{{ docs.document }} </h>
+<h2>Техническая документация  </h2>
+    <div class="pull-right">
+    <a href="{% url 'coffe_m:create_useful_docs' %}"><button class="btn btn-info"><i class="fas fa=plus-circle"></i>Добавить документацию</button></a>
+    </div>
+{% for doc in useful_docs %}
+    <p>
+    <h>{{ doc.model_machine }} </h>
+    <h>{{ doc.document }} </h>
+    </p>
 
 {% endfor %}
 {% endblock %}
