@@ -1,4 +1,4 @@
-from django.contrib import admin
+
 from django.urls import path, include, re_path
 from . import views
 
@@ -15,6 +15,4 @@ urlpatterns = [
     path('create_visit/<int:create_visit_id>/', views.Create_visit.as_view(), name='create_visit'),
     path('accounts/', include('django.contrib.auth.urls'), name='accounts'),
 
-    # path('car/<int:car_id>', views.car_details, name='car_details'),
-    # path('car/<int:car_id>/share/', views.share_car, name='share_car'),
 ]

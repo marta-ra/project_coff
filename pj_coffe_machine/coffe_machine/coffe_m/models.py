@@ -1,6 +1,5 @@
 from django.db import models
-from django.db.models import fields
-from django.http import HttpResponse, request, HttpResponseRedirect
+
 from django.shortcuts import reverse, render
 
 
@@ -22,7 +21,6 @@ class Point_coffemachine(models.Model):
     manager_telephone = models.CharField(max_length=255)
     region = models.CharField(max_length=255, verbose_name='Point region')
 
-    # coffemachines = models.ForeignKey(Coffemachine, related_name='Coffemachines', on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return '{}, {}'.format(self.client_point, self.client_name)
@@ -32,7 +30,6 @@ class Coffemachine(models.Model):
     model = models.CharField(max_length=255, verbose_name='Model')
     point = models.ForeignKey(Point_coffemachine, related_name='Coffemachines', on_delete=models.SET_NULL, null=True)
 
-    # visits = models.ForeignKey(Visit, related_name='Visits', on_delete=models.SET_NULL, null=True)
     def merge_tabl_point_machines(self, parent_id):
         return Point_coffemachine.objects.filter(parent__id=parent_id).count()
 

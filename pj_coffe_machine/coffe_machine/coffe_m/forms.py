@@ -1,4 +1,3 @@
-from django.urls import reverse, reverse_lazy
 
 from .models import Visit
 from .models import Useful_code
@@ -21,4 +20,3 @@ class Useful_docsForm(ModelForm):
         model = Useful_docs
         fields = ['model_machine', 'document']
 
-        # success_url = reverse_lazy('create_useful_docs')
