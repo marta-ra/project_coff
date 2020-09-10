@@ -51,17 +51,17 @@ class Visit(models.Model):
     def __str__(self):
         return '{}, {}, {}'.format(self.coffemachine, self.visit_date, self.technical_specialist)
 
-    #def get_absolute_url(self):
-        #return HttpResponseRedirect('/')
+    def get_absolute_url(self):
+        return reverse('coffe_m:create_visit')
 
-    # return reverse('visit:create_visit', args=[self.id, ])
 
-    # class Meta:
-    #     ordering = ('-client_name',)
 
 class Useful_code(models.Model):
     description = models.CharField(max_length=255, verbose_name='Описание кода')
     code = models.CharField(max_length=255, verbose_name='Код')
+
+    def get_absolute_url(self):
+        return reverse('coffe_m:create_useful_code')
 
     def __str__(self):
         return '{}: {}'.format(self.description, self.code)
@@ -70,6 +70,9 @@ class Useful_code(models.Model):
 class Useful_docs(models.Model):
     model_machine = models.CharField(max_length=255, verbose_name='Модель кофемашины')
     document = models.FileField(upload_to='uploads/')
+
+    def get_absolute_url(self):
+        return reverse('coffe_m:create_useful_docs')
 
     def __str__(self):
         return '{}: {}'.format(self.model_machine, self.document)

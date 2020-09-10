@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>{% block title %}My Point coffemachine{% endblock %}</title>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='slim' %}
+    <link rel="stylesheet" href="{% static 'coffe_m/css/base.css' %}">
+</head>
+
+<header>
+    {% block menu %}
+
+    {% endblock %}
+</header>
+
+<body>
+
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
