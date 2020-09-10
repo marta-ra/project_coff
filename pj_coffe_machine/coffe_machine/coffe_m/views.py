@@ -9,6 +9,7 @@ from .forms import Useful_codeForm
 from .forms import Useful_docsForm
 from .models import Point_coffemachine
 from .models import Visit
+from .models import Coffemachine
 
 
 
@@ -21,7 +22,10 @@ def all_clients(request):
 
 def report_visits(request):
     report_visit = Visit.objects.all()
-    return render(request, 'coffe/reports.html', {'report_visit': report_visit})
+    point = Point_coffemachine.objects.all()
+    coffemachine = Coffemachine.objects.all()
+    merge = Coffemachine.objects.all()
+    return render(request, 'coffe/reports.html', {'report_visit': report_visit, 'point': point, 'coffemachine': coffemachine, 'merge': merge})
 
 def useful_code(request):
     useful_code = models.Useful_code.objects.all()

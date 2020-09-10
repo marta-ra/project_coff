@@ -33,6 +33,8 @@ class Coffemachine(models.Model):
     point = models.ForeignKey(Point_coffemachine, related_name='Coffemachines', on_delete=models.SET_NULL, null=True)
 
     # visits = models.ForeignKey(Visit, related_name='Visits', on_delete=models.SET_NULL, null=True)
+    def merge_tabl_point_machines(self, parent_id):
+        return Point_coffemachine.objects.filter(parent__id=parent_id).count()
 
     def __str__(self):
         return '{}, {}'.format(self.model, self.point)
@@ -71,3 +73,5 @@ class Useful_docs(models.Model):
 
     def __str__(self):
         return '{}: {}'.format(self.model_machine, self.document)
+
+
