@@ -5,7 +5,7 @@
 {% block content %}
     <div class="features">
         <h1>Добавление технической документации</h1>
-        <form method="post" action="/create_useful_docs">
+        <form method="post" action="/create_useful_docs" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
             <button class="btn btn-success" type="submit">Сохранить</button>

@@ -69,7 +69,7 @@ class Useful_code(models.Model):
 
 class Useful_docs(models.Model):
     model_machine = models.CharField(max_length=255, verbose_name='Модель кофемашины')
-    document = models.FileField(max_length=255, verbose_name='Документация')
+    document = models.FileField(upload_to='uploads/')
 
     def __str__(self):
         return '{}: {}'.format(self.model_machine, self.document)
