@@ -7,27 +7,44 @@
 
  <form method="POST" action="create/">
         {% csrf_token %}
-        <p>
+        <!--<p>
             <label>Введите дату</label><br>
             <input type="date" name="date" />
-        </p>
+        </p>-->
+
+ </form>
+
+<!-- Form will be here -->
+
+
+
 {% if date > 0%}
-{%
      {% endif %}
-<!--{% for visit in report_visit %}
+
+<div>
+         <h2>Визиты</h2>
+<table>
+{% for visit in report_visit %}
      {% if date == Visit.visit_date %}
-                <h2>{{ visit.visit_date }} </h2>
-                <h2>{{ visit.technical_specialist }} </h2>
-                <h2>{{ visit.done }} </h2>
-                <h2>{{ visit.renovation }} </h2>
-                <h2>{{ visit.what_renovation }} </h2>
+        <tr>
+                <td>{{ visit.visit_date }} </td>
+                <td>{{ visit.technical_specialist }} </td>
+                <td>{{ visit.done }} </td>
+                <td>{{ visit.renovation }} </td>
+                <td>{{ visit.what_renovation }} </td>
+        </tr>
     {% endif %}
-{% endfor %}-->
-
-{% for i in merge %}
-  <span>{{ i.client_point }} </span>
-  <span>{{ i.model }} </span>
-
 {% endfor %}
-
+</table>
+         <h2>Кофемашины</h2>
+    <table>
+{% for i in merge %}
+    <tr>
+  <td>{{ i.client_point }} </td>
+  <td>{{ i.model }} </td>
+</tr>
+{% endfor %}
+</table>
+</div>
 {% endblock %}
+
