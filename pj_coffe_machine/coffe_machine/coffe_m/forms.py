@@ -1,4 +1,4 @@
-
+from django import forms
 from .models import Visit
 from .models import Useful_code
 from .models import Useful_docs
@@ -20,3 +20,5 @@ class Useful_docsForm(ModelForm):
         model = Useful_docs
         fields = ['model_machine', 'document']
 
+class SearchForm(forms.Form):
+    query = forms.CharField()

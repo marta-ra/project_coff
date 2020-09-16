@@ -14,5 +14,6 @@ urlpatterns = [
     path('create_useful_docs', views.Create_Useful_docs.as_view(), name='create_useful_docs'),
     path('create_visit/<int:create_visit_id>/', views.Create_visit.as_view(), name='create_visit'),
     path('accounts/', include('django.contrib.auth.urls'), name='accounts'),
+    path('search/', views.post_search, name='post_search'),
 
 ]
